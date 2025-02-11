@@ -9,9 +9,11 @@ public class App {
 	private static List<Funcionario> funcionarios;
 
 	public static void main(String[] args) {
-		FuncionarioManager funcionarioHandler = FuncionarioManager.getInstance();
-		funcionarios = funcionarioHandler.addFuncionarios();
-		for(Funcionario f: funcionarios) {
+		FuncionarioManager funcionarioManager = FuncionarioManager.getInstance();
+		App.funcionarios = funcionarioManager.addFuncionarios();
+		List<Funcionario> funcionariosFiltrados = funcionarioManager.removeFuncionario("João", funcionarios);
+		
+		for(Funcionario f: funcionariosFiltrados) {
 			System.out.println(f);
 		}
 	}

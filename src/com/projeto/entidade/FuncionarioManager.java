@@ -10,6 +10,7 @@ import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
 
 public class FuncionarioManager implements IFuncionario {
 	private static FuncionarioManager funcionarioManager;
@@ -102,5 +103,14 @@ public class FuncionarioManager implements IFuncionario {
    // Extracts the value from a JSON key-value pair
    public static String extractValue(String keyValue) {
        return keyValue.split(":")[1].trim().replace("\"", "");
+   }
+
+   public List<Funcionario> removeFuncionario(String nome, List<Funcionario> funcionarios) {
+	   List<Funcionario> filteredList = funcionarios.stream().filter(funcionario -> {
+		   return !funcionario.getNome().equals(nome);
+	   })
+	   .collect(Collectors.toList());
+	   return filteredList;
+	   
    }
 }
