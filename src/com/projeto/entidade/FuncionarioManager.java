@@ -6,10 +6,12 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.math.BigDecimal;
 import java.nio.file.Paths;
+import java.text.NumberFormat;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Locale;
 import java.util.stream.Collectors;
 
 public class FuncionarioManager implements IFuncionario {
@@ -112,5 +114,23 @@ public class FuncionarioManager implements IFuncionario {
 	   .collect(Collectors.toList());
 	   return filteredList;
 	   
+   }
+
+   public void printFuncionarios(List<Funcionario> funcionarios) {
+	   for(Funcionario f : funcionarios) {
+		   String nome = f.getNome();
+		   LocalDate dataNascimento = f.getDataNascimento();
+		   BigDecimal salario = f.getSalario();
+		   String funcao = f.getFuncao();
+
+		   Locale locale = new Locale("pt", "BR");
+		   NumberFormat formatter = NumberFormat.getInstance(locale);
+		   String formattedSalario = formatter.format(salario);
+
+		   DateTimeFormatter dateFormatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
+		   String formattedDate = dataNascimento.format(dateFormatter);
+		   String formattedOutput = "%s\t%s\t%s\t%s".formatted(nome, formattedDate, formattedSalario, funcao);
+		   System.out.println(formattedOutput);
+	   }
    }
 }

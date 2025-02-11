@@ -13,8 +13,6 @@ public class App {
 		App.funcionarios = funcionarioManager.addFuncionarios();
 		List<Funcionario> funcionariosFiltrados = funcionarioManager.removeFuncionario("João", funcionarios);
 		
-		for(Funcionario f: funcionariosFiltrados) {
-			System.out.println(f);
-		}
+		funcionarioManager.printFuncionarios(funcionariosFiltrados);
 	}
 }
