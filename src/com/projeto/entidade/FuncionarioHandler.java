@@ -1,8 +1,9 @@
 package com.projeto.entidade;
 
 import java.io.BufferedReader;
-import java.io.FileReader;
+import java.io.FileInputStream;
 import java.io.IOException;
+import java.io.InputStreamReader;
 import java.math.BigDecimal;
 import java.nio.file.Paths;
 import java.time.LocalDate;
@@ -17,7 +18,7 @@ public class FuncionarioHandler implements IFuncionario {
 	        StringBuilder jsonContent = new StringBuilder();
 
 	        // Step 1: Read JSON file content into a String
-	        try (BufferedReader br = new BufferedReader(new FileReader(filePath))) {
+	        try (BufferedReader br = new BufferedReader(new InputStreamReader(new FileInputStream(filePath), "UTF-8"))) {
 	            String line;
 	            while ((line = br.readLine()) != null) {
 	                jsonContent.append(line);
