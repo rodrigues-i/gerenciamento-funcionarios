@@ -10,8 +10,10 @@ import java.text.NumberFormat;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Locale;
+import java.util.Map;
 import java.util.stream.Collectors;
 
 public class FuncionarioManager implements IFuncionario {
@@ -146,5 +148,20 @@ public class FuncionarioManager implements IFuncionario {
 	   })
 		.collect(Collectors.toList());
 	   
+   }
+
+   public HashMap<String, List<Funcionario>> groupFuncionarios(List<Funcionario> funcionarios) {
+	   HashMap<String, List<Funcionario>> agrupamento = new HashMap<>();
+	   for(Funcionario f : funcionarios) {
+		   String funcao = f.getFuncao();
+		   if(!agrupamento.containsKey(funcao)) {
+			 agrupamento.put(funcao, new ArrayList<>());  
+		   }
+		   List<Funcionario> listaExistente = agrupamento.get(funcao);
+		   listaExistente.add(f);
+		   agrupamento.put(funcao, listaExistente);
+	   }
+
+	   return agrupamento;
    }
 }

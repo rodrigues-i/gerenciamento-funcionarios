@@ -1,5 +1,6 @@
 package com.projeto.entidade;
 
+import java.util.HashMap;
 import java.util.List;
 
 public interface IFuncionario {
@@ -8,4 +9,5 @@ public interface IFuncionario {
 	public List<Funcionario> removeFuncionario(String nome, List<Funcionario> funcionarios);
 	public void printFuncionarios(List<Funcionario> funcionarios);
 	public List<Funcionario> ganharAumento(int porcentagemAumento, List<Funcionario> funcionarios);
+	public HashMap<String, List<Funcionario>> groupFuncionarios(List<Funcionario> funcionarios);
 }

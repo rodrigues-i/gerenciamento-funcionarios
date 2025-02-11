@@ -1,5 +1,6 @@
 package com.projeto;
 
+import java.util.HashMap;
 import java.util.List;
 
 import com.projeto.entidade.Funcionario;
@@ -15,5 +16,7 @@ public class App {
 		funcionarioManager.printFuncionarios(funcionarios);
 
 		funcionarios = funcionarioManager.ganharAumento(10, funcionarios);
+
+		HashMap<String, List<Funcionario>> agrupamento = funcionarioManager.groupFuncionarios(funcionarios);
 	}
 }
