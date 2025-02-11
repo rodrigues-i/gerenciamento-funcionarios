@@ -18,5 +18,10 @@ public class App {
 		funcionarios = funcionarioManager.ganharAumento(10, funcionarios);
 
 		HashMap<String, List<Funcionario>> agrupamento = funcionarioManager.groupFuncionarios(funcionarios);
+		System.out.println("-".repeat(60));
+		System.out.println("Agrupamento por Função");
+		System.out.println("-".repeat(60));
+
+		funcionarioManager.printAgrupamento(agrupamento);
 	}
 }

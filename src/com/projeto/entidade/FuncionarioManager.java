@@ -164,4 +164,17 @@ public class FuncionarioManager implements IFuncionario {
 
 	   return agrupamento;
    }
+
+   public void printAgrupamento(HashMap<String, List<Funcionario>> agrupamento) {
+	   for(Map.Entry<String, List<Funcionario>> entry : agrupamento.entrySet()) {
+		   StringBuilder strBuilder = new StringBuilder();
+		   strBuilder.append(entry.getKey() + " -> ");
+		   for(Funcionario f: entry.getValue()) {
+			   strBuilder.append(f.getNome() + ", ");
+		   }
+		   String fileiraAtual = strBuilder.toString();
+		   fileiraAtual = fileiraAtual.substring(0, fileiraAtual.length() - 2);
+		   System.out.println(fileiraAtual);
+	   }
+   }
 }
