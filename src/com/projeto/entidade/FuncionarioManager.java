@@ -11,7 +11,7 @@ import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.List;
 
-public class FuncionarioHandler implements IFuncionario {
+public class FuncionarioManager implements IFuncionario {
 
 	public List<Funcionario> addFuncionarios() {
 		String filePath = Paths.get("src/com/projeto/funcionarios.json").toString();
