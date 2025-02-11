@@ -6,13 +6,14 @@ import com.projeto.entidade.Funcionario;
 import com.projeto.entidade.FuncionarioManager;
 
 public class App {
-	private static List<Funcionario> funcionarios;
 
 	public static void main(String[] args) {
 		FuncionarioManager funcionarioManager = FuncionarioManager.getInstance();
-		App.funcionarios = funcionarioManager.addFuncionarios();
-		List<Funcionario> funcionariosFiltrados = funcionarioManager.removeFuncionario("João", funcionarios);
+		List<Funcionario> funcionarios = funcionarioManager.addFuncionarios();
+		funcionarios = funcionarioManager.removeFuncionario("João", funcionarios);
 		
-		funcionarioManager.printFuncionarios(funcionariosFiltrados);
+		funcionarioManager.printFuncionarios(funcionarios);
+
+		funcionarios = funcionarioManager.ganharAumento(10, funcionarios);
 	}
 }

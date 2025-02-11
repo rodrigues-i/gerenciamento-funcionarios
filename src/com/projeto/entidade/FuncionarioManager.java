@@ -133,4 +133,18 @@ public class FuncionarioManager implements IFuncionario {
 		   System.out.println(formattedOutput);
 	   }
    }
+
+   public List<Funcionario> ganharAumento(int porcentagemAumento, List<Funcionario> funcionarios) {
+	   BigDecimal porcentagemValue = BigDecimal.valueOf(porcentagemAumento / 100.0);
+
+	   
+	   return funcionarios.stream().map(funcionario -> {
+		   BigDecimal porcentagem = funcionario.getSalario().multiply(porcentagemValue);
+		   BigDecimal aumento = funcionario.getSalario().add(porcentagem);
+		   funcionario.setSalario(aumento);
+		   return funcionario;
+	   })
+		.collect(Collectors.toList());
+	   
+   }
 }
