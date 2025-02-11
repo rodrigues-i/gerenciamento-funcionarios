@@ -2,6 +2,7 @@ package com.projeto.entidade;
 
 import java.math.BigDecimal;
 import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 import java.util.Objects;
 
 public class Funcionario extends Pessoa {
@@ -53,6 +54,6 @@ public class Funcionario extends Pessoa {
 
 	@Override
 	public String toString() {
-		return "Funcionario [salario=" + salario + ", funcao=" + funcao + "]";
+		return "Funcionario [nome=" + this.getNome() + ", dataNascimento=" + this.getDataNascimento().format(DateTimeFormatter.ofPattern("dd/MM/yyyy")) + ", salario=" + salario + ", funcao=" + funcao + "]";
 	}
 }
