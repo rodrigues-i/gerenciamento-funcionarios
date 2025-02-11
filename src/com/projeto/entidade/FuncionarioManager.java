@@ -8,6 +8,7 @@ import java.math.BigDecimal;
 import java.nio.file.Paths;
 import java.text.NumberFormat;
 import java.time.LocalDate;
+import java.time.Period;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -212,5 +213,37 @@ public class FuncionarioManager implements IFuncionario {
 	   }
 	   System.out.println(aniversariantesOutubro);
 	   System.out.println(aniversariantesDezembro);
+   }
+
+   public void printFuncionarioMaisVelho(List<Funcionario> funcionarios) {
+	   Funcionario funcionarioMaisVelho = findFuncionarioMaisVelhor(funcionarios);
+	   String nome = funcionarioMaisVelho.getNome();
+	   LocalDate hoje = LocalDate.now();
+	   LocalDate dataNascimento = funcionarioMaisVelho.getDataNascimento();
+	   Period periodo = Period.between(dataNascimento, hoje);
+	   int idade = periodo.getYears();
+	   String saida = "Funcionario:\n";
+	   saida += "Nome: " + nome + "\n";
+	   saida += "Idade: " + idade;
+	   System.out.println(saida);
+   }
+
+   private Funcionario findFuncionarioMaisVelhor(List<Funcionario> funcionarios) {
+	   Funcionario funcionarioMaisVelho = null;
+	   LocalDate dataMaisAntiga = null;
+
+	   for(Funcionario f : funcionarios) {
+		   LocalDate dataNascimento = f.getDataNascimento();
+		   if(dataMaisAntiga == null && funcionarioMaisVelho == null) {
+			funcionarioMaisVelho = f;
+			dataMaisAntiga = dataNascimento;
+		   }
+		   else if(dataNascimento.isBefore(dataMaisAntiga)) {
+			   dataMaisAntiga = dataNascimento;
+			   funcionarioMaisVelho = f;
+		   }
+	   }
+
+	   return funcionarioMaisVelho;
    }
 }

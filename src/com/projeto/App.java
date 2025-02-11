@@ -28,5 +28,10 @@ public class App {
 		System.out.println("Aniversariantes de Outubro e Dezembro");
 		System.out.println("-".repeat(60));
 		funcionarioManager.printFuncionarioFazAniversariosMeses(funcionarios);
+
+		System.out.println("-".repeat(60));
+		System.out.println("Funcionário Mais Velho");
+		System.out.println("-".repeat(60));
+		funcionarioManager.printFuncionarioMaisVelho(funcionarios);
 	}
 }

@@ -12,4 +12,5 @@ public interface IFuncionario {
 	public HashMap<String, List<Funcionario>> groupFuncionarios(List<Funcionario> funcionarios);
 	public void printAgrupamento(HashMap<String, List<Funcionario>> agrupamento);
 	public void printFuncionarioFazAniversariosMeses(List<Funcionario> funcionarios);
+	public void printFuncionarioMaisVelho(List<Funcionario> funcionarios);
 }
