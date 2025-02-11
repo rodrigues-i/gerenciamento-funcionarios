@@ -9,7 +9,7 @@ public class App {
 	private static List<Funcionario> funcionarios;
 
 	public static void main(String[] args) {
-		FuncionarioManager funcionarioHandler = new FuncionarioManager();
+		FuncionarioManager funcionarioHandler = FuncionarioManager.getInstance();
 		funcionarios = funcionarioHandler.addFuncionarios();
 		for(Funcionario f: funcionarios) {
 			System.out.println(f);

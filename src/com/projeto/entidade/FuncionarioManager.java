@@ -12,6 +12,18 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class FuncionarioManager implements IFuncionario {
+	private static FuncionarioManager funcionarioManager;
+
+	private FuncionarioManager() {}
+
+	public static FuncionarioManager getInstance() {
+		if(funcionarioManager == null) {
+			FuncionarioManager funcionarioManager = new FuncionarioManager();
+			FuncionarioManager.funcionarioManager = funcionarioManager;
+		}
+
+		return FuncionarioManager.funcionarioManager;
+	}
 
 	public List<Funcionario> addFuncionarios() {
 		String filePath = Paths.get("src/com/projeto/funcionarios.json").toString();
