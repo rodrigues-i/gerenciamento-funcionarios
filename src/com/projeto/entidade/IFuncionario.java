@@ -11,4 +11,5 @@ public interface IFuncionario {
 	public List<Funcionario> ganharAumento(int porcentagemAumento, List<Funcionario> funcionarios);
 	public HashMap<String, List<Funcionario>> groupFuncionarios(List<Funcionario> funcionarios);
 	public void printAgrupamento(HashMap<String, List<Funcionario>> agrupamento);
+	public void printFuncionarioFazAniversariosMeses(List<Funcionario> funcionarios);
 }

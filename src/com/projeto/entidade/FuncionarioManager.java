@@ -177,4 +177,40 @@ public class FuncionarioManager implements IFuncionario {
 		   System.out.println(fileiraAtual);
 	   }
    }
+
+   public void printFuncionarioFazAniversariosMeses(List<Funcionario> funcionarios) {
+	   
+	   StringBuilder outubroSstrBuilder = new StringBuilder();
+	   StringBuilder dezembroSstrBuilder = new StringBuilder();
+	   outubroSstrBuilder.append("Aniversariantes de Outubo -> ");
+	   dezembroSstrBuilder.append("Aniversariantes de Dezembro -> ");
+	   for(Funcionario f : funcionarios) {
+		   LocalDate dataNascimento = f.getDataNascimento();
+		   int numeroMes = dataNascimento.getMonthValue();
+		   String nome = f.getNome();
+		   String expressao = nome + ", ";
+		   if(numeroMes == 10) {
+			   outubroSstrBuilder.append(expressao);
+		   } else if(numeroMes == 12) {
+			   dezembroSstrBuilder.append(expressao);
+		   }
+	   }
+	   String aniversariantesOutubro = outubroSstrBuilder.toString();
+	   String aniversariantesDezembro = dezembroSstrBuilder.toString();
+
+	   if(aniversariantesOutubro.equals("Aniversariantes de Outubo -> ")) {
+		   aniversariantesOutubro += "N/A.";
+	   } else {
+		   aniversariantesOutubro = aniversariantesOutubro.substring(0, aniversariantesOutubro.length() - 2);
+		   aniversariantesOutubro += ".";
+	   }
+	   if(aniversariantesDezembro.equals("Aniversariantes de Dezembro -> ")) {
+		   aniversariantesDezembro += "N/A.";
+	   } else {
+		   aniversariantesDezembro = aniversariantesDezembro.substring(0, aniversariantesDezembro.length() -2);
+		   aniversariantesDezembro += ".";
+	   }
+	   System.out.println(aniversariantesOutubro);
+	   System.out.println(aniversariantesDezembro);
+   }
 }
