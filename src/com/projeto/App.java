@@ -33,5 +33,15 @@ public class App {
 		System.out.println("Funcionário Mais Velho");
 		System.out.println("-".repeat(60));
 		funcionarioManager.printFuncionarioMaisVelho(funcionarios);
+
+		System.out.println("-".repeat(60));
+		System.out.println("Funcionários Por Ordem Alfabetica");
+		System.out.println("-".repeat(60));
+		funcionarioManager.printFuncionariosOrdemAlfabetica(funcionarios);
+
+		System.out.println("-".repeat(60));
+		System.out.println("Salário Total dos Funcionarios");
+		System.out.println("-".repeat(60));
+		funcionarioManager.printTotalSalarioFuncionarios(funcionarios);
 	}
 }

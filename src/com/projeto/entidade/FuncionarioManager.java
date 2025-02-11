@@ -246,4 +246,25 @@ public class FuncionarioManager implements IFuncionario {
 
 	   return funcionarioMaisVelho;
    }
+
+   public void printFuncionariosOrdemAlfabetica(List<Funcionario> funcionarios) {
+	   List<Funcionario> funcionariosOrdenados = ordenaFuncionarios(funcionarios);
+	   printFuncionarios(funcionariosOrdenados);
+   }
+
+   private List<Funcionario> ordenaFuncionarios(List<Funcionario> funcionarios) {
+	   funcionarios.sort((f1, f2) -> f1.getNome().compareTo(f2.getNome()));
+	   return funcionarios;
+   }
+
+   public void printTotalSalarioFuncionarios(List<Funcionario> funcionarios) {
+	   BigDecimal total = funcionarios.stream()
+			   								.map(Funcionario::getSalario)
+			   								.reduce(BigDecimal.ZERO, BigDecimal::add);
+	   Locale locale = new Locale("pt", "BR");
+	   NumberFormat formatter = NumberFormat.getInstance(locale);
+	   String salarioTotal = formatter.format(total);
+	   String output = "Salário -> " + salarioTotal;
+	   System.out.println(output);
+   }
 }

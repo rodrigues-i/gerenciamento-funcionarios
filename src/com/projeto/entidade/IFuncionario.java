@@ -13,4 +13,6 @@ public interface IFuncionario {
 	public void printAgrupamento(HashMap<String, List<Funcionario>> agrupamento);
 	public void printFuncionarioFazAniversariosMeses(List<Funcionario> funcionarios);
 	public void printFuncionarioMaisVelho(List<Funcionario> funcionarios);
+	public void printFuncionariosOrdemAlfabetica(List<Funcionario> funcionarios);
+	public void printTotalSalarioFuncionarios(List<Funcionario> funcionarios);
 }
