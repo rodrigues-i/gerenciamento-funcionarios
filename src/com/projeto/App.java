@@ -5,11 +5,12 @@ import java.util.List;
 
 import com.projeto.entidade.Funcionario;
 import com.projeto.entidade.FuncionarioManager;
+import com.projeto.entidade.IFuncionario;
 
 public class App {
 
 	public static void main(String[] args) {
-		FuncionarioManager funcionarioManager = FuncionarioManager.getInstance();
+		IFuncionario funcionarioManager = FuncionarioManager.getInstance();
 		List<Funcionario> funcionarios = funcionarioManager.addFuncionarios();
 		funcionarios = funcionarioManager.removeFuncionario("João", funcionarios);
 		

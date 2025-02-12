@@ -18,11 +18,11 @@ import java.util.Map;
 import java.util.stream.Collectors;
 
 public class FuncionarioManager implements IFuncionario {
-	private static FuncionarioManager funcionarioManager;
+	private static IFuncionario funcionarioManager;
 
 	private FuncionarioManager() {}
 
-	public static FuncionarioManager getInstance() {
+	public static IFuncionario getInstance() {
 		if(funcionarioManager == null) {
 			FuncionarioManager funcionarioManager = new FuncionarioManager();
 			FuncionarioManager.funcionarioManager = funcionarioManager;
