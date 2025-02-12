@@ -7,9 +7,9 @@ Este problema em java tem as seguintes funcionalidades:
 - Agrupa os funcionários por função em um MAP, sendo a chave a “função” e o valor a “lista de funcionários”.
 - Imprime os funcionários, agrupados por função.
 - Imprime os funcionários que fazem aniversário no mês 10 e 12.
-- Imprime o funcionário com a maior idade, exibir os atributos: nome e idade.
+- Imprime o funcionário com a maior idade.
 - Imprime a lista de funcionários por ordem alfabética.
-- Imprime o total dos salários dos funcionários.
+- Imprime a soma total do salário dos funcionários.
 - Imprime quantos salários mínimos ganha cada funcionário, considerando que o salário mínimo é R$1212.00.
 
 ## Técnologias Usadas
