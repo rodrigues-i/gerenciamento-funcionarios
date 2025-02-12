@@ -43,5 +43,10 @@ public class App {
 		System.out.println("Salário Total dos Funcionarios");
 		System.out.println("-".repeat(60));
 		funcionarioManager.printTotalSalarioFuncionarios(funcionarios);
+
+		System.out.println("-".repeat(60));
+		System.out.println("Número de Salários Mínimos Ganhos por Cada Funcionário");
+		System.out.println("-".repeat(60));
+		funcionarioManager.printQuantosSalariosMinimosGanha(funcionarios);
 	}
 }

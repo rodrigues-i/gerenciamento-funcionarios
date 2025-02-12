@@ -15,4 +15,5 @@ public interface IFuncionario {
 	public void printFuncionarioMaisVelho(List<Funcionario> funcionarios);
 	public void printFuncionariosOrdemAlfabetica(List<Funcionario> funcionarios);
 	public void printTotalSalarioFuncionarios(List<Funcionario> funcionarios);
+	public void printQuantosSalariosMinimosGanha(List<Funcionario> funcionarios);
 }

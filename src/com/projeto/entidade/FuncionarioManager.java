@@ -267,4 +267,19 @@ public class FuncionarioManager implements IFuncionario {
 	   String output = "Salário -> " + salarioTotal;
 	   System.out.println(output);
    }
+
+   public void printQuantosSalariosMinimosGanha(List<Funcionario> funcionarios) {
+	   Map<String, Integer> mapeamentoSalarioMinimo = new HashMap<>();
+	   for(Funcionario f: funcionarios) {
+		   String nome = f.getNome();
+		   BigDecimal salario = f.getSalario();
+		   BigDecimal salarioMinimo = BigDecimal.valueOf(1212.00);
+		   BigDecimal quantidadeSalariosMinimos = salario.divide(salarioMinimo, 2, BigDecimal.ROUND_HALF_UP);
+		   Locale locale = new Locale("pt", "BR");
+		   NumberFormat formatter = NumberFormat.getInstance(locale);
+		   String salariosMinimos = formatter.format(quantidadeSalariosMinimos);
+		   String output = "%s ganha %s salários mínimos.".formatted(nome, salariosMinimos);
+		   System.out.println(output);
+	   }
+   }
 }
